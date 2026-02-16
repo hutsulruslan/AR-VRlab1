@@ -1,0 +1,22 @@
+{
+  "name": "lab-2025-01-webxr",
+  "version": "1.0.0",
+  "description": "Hello WebXR — AR cube 1x1x1 m",
+  "type": "module",
+  "scripts": {
+    "build": "pnpm exec esbuild main.ts --bundle --outfile=dist/main.js --format=esm",
+    "build:watch": "pnpm exec esbuild main.ts --bundle --outfile=dist/main.js --format=esm --watch",
+    "start": "pnpm exec concurrently \"pnpm run build:watch\" \"pnpm exec serve . -p 3000\""
+  },
+  "devDependencies": {
+    "@types/three": "^0.172.0",
+    "@types/webxr": "^0.5.24",
+    "concurrently": "^9",
+    "esbuild": "^0.24",
+    "serve": "^14",
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "three": "^0.172.0"
+  }
+}
